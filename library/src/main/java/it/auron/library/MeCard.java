@@ -114,46 +114,46 @@ public class MeCard {
         meCardString.append(MeCardCostant.KEY_MECARD);
 
         if (!TextUtils.isEmpty(name)) {
-            meCardString.append(MeCardCostant.KEY_NAME);
-            meCardString.append(name);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_NAME)
+                    .append(name)
+                    .append(";");
         }
 
         if (!TextUtils.isEmpty(address)) {
-            meCardString.append(MeCardCostant.KEY_ADDRESS);
-            meCardString.append(address);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_ADDRESS)
+                    .append(address)
+                    .append(";");
         }
 
         if (!TextUtils.isEmpty(url)) {
-            meCardString.append(MeCardCostant.KEY_URL);
-            meCardString.append(url);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_URL)
+                    .append(url)
+                    .append(";");
         }
 
         if (!TextUtils.isEmpty(note)) {
-            meCardString.append(MeCardCostant.KEY_NOTE);
-            meCardString.append(note);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_NOTE)
+                    .append(note)
+                    .append(";");
         }
 
         if (!TextUtils.isEmpty(date)) {
-            meCardString.append(MeCardCostant.KEY_DAY);
-            meCardString.append(date);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_DAY)
+                    .append(date)
+                    .append(";");
         }
         if (!TextUtils.isEmpty(email)) {
-            meCardString.append(MeCardCostant.KEY_EMAIL);
-            meCardString.append(email);
-            meCardString.append(";");
+            meCardString.append(MeCardCostant.KEY_EMAIL)
+                    .append(email)
+                    .append(";");
         }
         if (telephones != null)
 
             for (String telephone : telephones) {
 
-                meCardString.append(MeCardCostant.KEY_TELEPHONE);
-                meCardString.append(telephone);
-                meCardString.append(";");
+                meCardString.append(MeCardCostant.KEY_TELEPHONE)
+                        .append(telephone)
+                        .append(";");
 
             }
 

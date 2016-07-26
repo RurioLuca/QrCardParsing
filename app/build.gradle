@@ -21,5 +21,6 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.github.kenglxn.QRGen:android:2.1.0'
     compile project(path: ':library')
 }
