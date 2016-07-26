@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<string name="define_int_mecardparser"></string>
+	<string name="library_mecardparser_author">Rurio Luca</string>
+	<string name="library_mecardparser_authorWebsite">https://github.com/RurioLuca/MeCardParser</string>
+	<string name="library_mecardparser_libraryName">MeCardParser</string>
+	<string name="library_mecardparser_libraryDescription">Parsing and generate MeCard Content</string>
+	<string name="library_mecardparser_libraryWebsite">https://github.com/RurioLuca/MeCardParser</string>
+	<string name="library_mecardparser_libraryVersion">1.0.0</string>
+	<string name="library_mecardparser_isOpenSource">true</string>
+	<string name="library_mecardparser_repositoryLink">https://github.com/RurioLuca/MeCardParser</string>
+	<string name="library_mecardparser_classPath">it.auron.mecard</string>
+	<string name="library_mecardparser_licenseId">mit</string>
+</resources>
+
+
