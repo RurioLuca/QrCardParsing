@@ -23,7 +23,7 @@
  */
 
 
-package it.auron.library;
+package it.auron.library.mecard;
 
 
 import java.util.StringTokenizer;

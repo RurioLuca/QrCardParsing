@@ -23,7 +23,7 @@
  */
 
 
-package it.auron.library;
+package it.auron.library.mecard;
 
 /**
  * Created by luca on 7/26/16.
