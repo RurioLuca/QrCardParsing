@@ -70,7 +70,7 @@ upload in progrss..
 ###Developed By
 Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
-[![Linkedin](https://raw.githubusercontent.com/RurioLuca/MeCardParsering/master/img/social/linkedin-icon.png) ](https://it.linkedin.com/in/luca-rurio-5a4462107)
+[![Linkedin](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/social/linkedin-icon.png) ](https://it.linkedin.com/in/luca-rurio-5a4462107)
 
 ###App using MarshmallowPermissionManager
 =======
