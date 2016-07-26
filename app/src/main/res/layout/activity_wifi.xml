@@ -18,7 +18,7 @@
 
         <TextView
         android:layout_below="@+id/text"
-        android:id="@+id/vcard"
+        android:id="@+id/wificard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="content qr code" />
