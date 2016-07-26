@@ -29,13 +29,20 @@ package it.auron.library.vcard;
 public class VCardCostant {
 
 
-    public static final String KEY_BEGIN_VCARD = "BEGIN:VCARD:";
-    public static final String KEY_NAME = "N:";
-    public static final String KEY_COMPANY = "ORG:";
-    public static final String KEY_TITLE = "TITLE:";
-    public static final String KEY_PHONE = "TEL:";
-    public static final String KEY_WEB = "URL:";
-    public static final String KEY_EMAIL = "EMAIL:";
-    public static final String KEY_ADDRESS = "ADR:";
-    public static final String KEY_NOTE = "NOTE:";
+    public static final String KEY_BEGIN_VCARD = "BEGIN:VCARD";
+    public static final String KEY_END_VCARD = "END:VCARD";
+    public static final String KEY_SEPARATOR = "\r?\n";
+    public static final String KEY_SPLIT = ":";
+    public static final String KEY_LINE_ESCAPE = "\n";
+    public static final String KEY_VERSION="VERSION:3.0";
+    public static final String KEY_NAME = "N";
+    public static final String KEY_FORMATTEDNAME = "FN";
+
+    public static final String KEY_COMPANY = "ORG";
+    public static final String KEY_TITLE = "TITLE";
+    public static final String KEY_PHONE = "TEL";
+    public static final String KEY_WEB = "URL";
+    public static final String KEY_EMAIL = "EMAIL";
+    public static final String KEY_ADDRESS = "ADR";
+    public static final String KEY_NOTE = "NOTE";
 }

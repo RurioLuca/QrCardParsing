@@ -27,17 +27,28 @@ public class VCardActivty extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.vcard);
         imageView = (ImageView) findViewById(R.id.qrcode);
 
-        String vCardString = "MECARD:N:Rurio Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
+        String vCardString = "BEGIN:VCARD\n" +
+                "N:Luca\n" +
+                "FN:Rurio Luca\n" +
+                "ORG:freelancer\n" +
+            //   "URL:https\\://github.com/RurioLuca/MeCardParsing\n" +
+                "TITLE:Developer\n" +
+                "EMAIL:rurio.luca@gmail.com\n" +
+                "END:VCARD";
         VCard vCard = VCardParser.parse(vCardString);
 
         vCard.setNote("vCard generate and modified!");
-        vCard.setPhoneNumber("+39 3486454314");
-
+        vCard.setTelephone("+39 3486454314");
         String vCardcontent = vCard.buildString();
 
         textView.setText(vCardcontent);
         imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
 
+
+        /*VCard vCard=new VCard();
+        vCard.setName("Rurio Luca");
+        vCard.setAddress("");
+    */
     }
 
 

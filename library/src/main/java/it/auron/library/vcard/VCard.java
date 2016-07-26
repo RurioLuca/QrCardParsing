@@ -32,17 +32,20 @@ public class VCard {
 
     private String name;
 
+    private String formattedName;
+
+
     private String company;
 
     private String title;
 
-    private String phoneNumber;
+    private String telephone;
 
     private String email;
 
     private String address;
 
-    private String website;
+    private String url;
 
     private String note;
 
@@ -70,13 +73,6 @@ public class VCard {
         this.title = title;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getEmail() {
         return email;
@@ -94,12 +90,29 @@ public class VCard {
         this.address = address;
     }
 
-    public String getWebsite() {
-        return website;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+
+    public String getFormattedName() {
+        return formattedName;
+    }
+
+    public void setFormattedName(String formattedName) {
+        this.formattedName = formattedName;
     }
 
     public String getNote() {
@@ -113,57 +126,49 @@ public class VCard {
     public String buildString() {
 
         StringBuilder meCardString = new StringBuilder();
-        meCardString.append(VCardCostant.KEY_BEGIN_VCARD);
+
+        meCardString.append(VCardCostant.KEY_BEGIN_VCARD).append(VCardCostant.KEY_LINE_ESCAPE);
+        meCardString.append(VCardCostant.KEY_VERSION).append(VCardCostant.KEY_LINE_ESCAPE);
 
         if (!TextUtils.isEmpty(name)) {
-            meCardString.append(VCardCostant.KEY_NAME)
-                    .append(name)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_NAME).append(":").append(name);
+        }
+        if (!TextUtils.isEmpty(formattedName)) {
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_FORMATTEDNAME).append(":").append(formattedName);
         }
 
         if (!TextUtils.isEmpty(address)) {
-            meCardString.append(VCardCostant.KEY_ADDRESS)
-                    .append(address)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_ADDRESS).append(":").append(address);
         }
 
         if (!TextUtils.isEmpty(company)) {
-            meCardString.append(VCardCostant.KEY_COMPANY)
-                    .append(company)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_COMPANY).append(":").append(company);
         }
 
         if (!TextUtils.isEmpty(title)) {
-            meCardString.append(VCardCostant.KEY_TITLE)
-                    .append(title)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_TITLE).append(":").append(title);
         }
 
-        if (!TextUtils.isEmpty(website)) {
-            meCardString.append(VCardCostant.KEY_WEB)
-                    .append(website)
-                    .append(";");
+        if (!TextUtils.isEmpty(url)) {
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_WEB).append(":").append(url);
         }
 
         if (!TextUtils.isEmpty(note)) {
-            meCardString.append(VCardCostant.KEY_NOTE)
-                    .append(note)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_NOTE).append(":").append(note);
         }
 
 
         if (!TextUtils.isEmpty(email)) {
-            meCardString.append(VCardCostant.KEY_EMAIL)
-                    .append(email)
-                    .append(";");
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(email);
+
         }
 
-        if (!TextUtils.isEmpty(phoneNumber)) {
-            meCardString.append(VCardCostant.KEY_EMAIL)
-                    .append(email)
-                    .append(";");
+        if (!TextUtils.isEmpty(telephone)) {
+            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_PHONE).append(":").append(telephone);
+
         }
 
+        meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_END_VCARD);
 
         return meCardString.toString();
 

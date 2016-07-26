@@ -48,6 +48,9 @@ package it.auron.library.vcard;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import it.auron.library.mecard.MeCardCostant;
@@ -60,12 +63,11 @@ public class VCardParser {
     public static VCard parse(String meCardContent) {
         VCard vCard = new VCard();
 
-        if (!meCardContent.startsWith(MeCardCostant.KEY_MECARD)) {
+        if (!meCardContent.startsWith(VCardCostant.KEY_BEGIN_VCARD)) {
             return null;
         }
 
         meCardContent = meCardContent.substring(VCardCostant.KEY_BEGIN_VCARD.length(), meCardContent.length());
-
         StringTokenizer st = new StringTokenizer(meCardContent, ";");
         while (st.hasMoreTokens()) {
             executeParsing(vCard, st.nextToken());
@@ -76,34 +78,63 @@ public class VCardParser {
     }
 
     private static void executeParsing(VCard vCard, String tokenparsing) {
+        Map<String, String> vCardValue = populateMap(tokenparsing);
 
-        if (tokenparsing.startsWith(VCardCostant.KEY_NAME)) {
-            vCard.setName(tokenparsing.substring(VCardCostant.KEY_NAME.length(), tokenparsing.length()));
-        }
 
-        if (tokenparsing.startsWith(VCardCostant.KEY_ADDRESS)) {
-            vCard.setAddress(tokenparsing.substring(VCardCostant.KEY_ADDRESS.length(), tokenparsing.length()));
+        if (vCardValue.containsKey(VCardCostant.KEY_NAME)) {
+            vCard.setName(vCardValue.get(VCardCostant.KEY_NAME));
         }
 
-        if (tokenparsing.startsWith(VCardCostant.KEY_PHONE)) {
-            vCard.setPhoneNumber(tokenparsing.substring(VCardCostant.KEY_PHONE.length(), tokenparsing.length()));
+        if (vCardValue.containsKey(VCardCostant.KEY_FORMATTEDNAME)) {
+            vCard.setFormattedName(vCardValue.get(VCardCostant.KEY_FORMATTEDNAME));
         }
-        if (tokenparsing.startsWith(VCardCostant.KEY_WEB)) {
-            vCard.setWebsite(tokenparsing.substring(VCardCostant.KEY_WEB.length(), tokenparsing.length()));
+
+        if (vCardValue.containsKey(VCardCostant.KEY_TITLE)) {
+            vCard.setTitle(vCardValue.get(VCardCostant.KEY_TITLE));
         }
-        if (tokenparsing.startsWith(VCardCostant.KEY_NOTE)) {
-            vCard.setNote(tokenparsing.substring(VCardCostant.KEY_NOTE.length(), tokenparsing.length()));
+
+        if (vCardValue.containsKey(VCardCostant.KEY_COMPANY)) {
+            vCard.setCompany(vCardValue.get(VCardCostant.KEY_COMPANY));
         }
-        if (tokenparsing.startsWith(VCardCostant.KEY_EMAIL)) {
-            vCard.setEmail(tokenparsing.substring(VCardCostant.KEY_EMAIL.length(), tokenparsing.length()));
+
+        if (vCardValue.containsKey(VCardCostant.KEY_ADDRESS)) {
+            vCard.setAddress(vCardValue.get(VCardCostant.KEY_ADDRESS));
         }
-        if (tokenparsing.startsWith(VCardCostant.KEY_TITLE)) {
-            vCard.setTitle(tokenparsing.substring(VCardCostant.KEY_TITLE.length(), tokenparsing.length()));
+
+        if (vCardValue.containsKey(VCardCostant.KEY_EMAIL)) {
+            vCard.setEmail(vCardValue.get(VCardCostant.KEY_EMAIL));
         }
-        if (tokenparsing.startsWith(VCardCostant.KEY_COMPANY)) {
-            vCard.setCompany(tokenparsing.substring(VCardCostant.KEY_COMPANY.length(), tokenparsing.length()));
+
+        if (vCardValue.containsKey(VCardCostant.KEY_WEB)) {
+            vCard.setUrl(vCardValue.get(VCardCostant.KEY_WEB));
         }
+
+        if (vCardValue.containsKey(VCardCostant.KEY_PHONE)) {
+            vCard.setTelephone(vCardValue.get(VCardCostant.KEY_PHONE));
+        }
+
+        if (vCardValue.containsKey(VCardCostant.KEY_NOTE)) {
+            vCard.setNote(vCardValue.get(VCardCostant.KEY_NOTE));
+        }
+
+
     }
 
+
+    public static Map<String, String> populateMap(String vCardContent) {
+
+        Map<String, String> map = new HashMap<>();
+
+        for (String s : vCardContent.split(VCardCostant.KEY_SEPARATOR)) {
+
+            String value[] = s.split(VCardCostant.KEY_SPLIT);
+
+            if (value.length >= 2) {
+                map.put(value[0], value[1]);
+            }
+        }
+
+        return map;
+    }
 
 }
