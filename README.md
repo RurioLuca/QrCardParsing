@@ -2,7 +2,7 @@
 
 [![Platform (Android)](https://img.shields.io/badge/platform-Android-blue.svg?style=flat-square)](http://www.android.com)
 
-Android Libraries to parsing and generate MeCard content
+Android Libraries to parsing and generate MeCard - VCard and WifiCard content.
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
 
@@ -64,6 +64,28 @@ upload in progrss..
   
    //sample using QrGen to generate QrCode bitmap
   imageView.setImageBitmap(QRCode.from(meCardcontent).bitmap());
+  
+```
+
+
+#### Generate VCard content
+```java
+      
+```
+#### Parsing VCard content
+
+```java
+
+ 
+        VCard vCard = VCardParser.parse(vCardString);
+
+        vCard.setNote("vCard generate and modified!");
+        vCard.setPhoneNumber("+39 3486454314");
+
+        String vCardcontent = vCard.buildString();
+
+        //sample using QrGen to generate QrCode bitmap
+        imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
   
 ```
 
