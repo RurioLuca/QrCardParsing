@@ -1,8 +1,8 @@
-# MeCardParsing
+# QrCardParsing
 
 [![Platform (Android)](https://img.shields.io/badge/platform-Android-blue.svg?style=flat-square)](http://www.android.com)
 
-Android Libraries to parsing and generate MeCard - VCard and WifiCard content.
+Android Libraries to parsing and generate MeCard - VCard and WifiCard content string.
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
 
@@ -111,16 +111,39 @@ compile 'it.auron:mecard-parser:1.0.1'
 
 ```java
 
-    
+        WifiCard wifiCard = new WifiCard();
+        wifiCard.setSid("Vodafone Wifi32341");
+        wifiCard.setPassword("administrator");
+        wifiCard.setType("WPA");
+        
+         //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(wifiCard.buildString()).bitmap());
         
 ```
 
+#### Parsing Wifi content
+
+```java
+
+        String wifiString = "WIFI:S:Vodafone Wifi32341;T:WPA;P:administrator;;";
+        WifiCard wifiCard = WifiCardParser.parse(wifiString);
+
+        wifiCard.setPassword("administrator2016");
+
+
+        String wifiCardcontent = wifiCard.buildString();
+
+        //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(wifiCardcontent).bitmap());
+
+
+```
 ###Developed By
 Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
 [![Linkedin](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/social/linkedin-icon.png) ](https://it.linkedin.com/in/luca-rurio-5a4462107)
 
-###App using MeCardParsing
+###App using QrCardParsing
 =======
 
   * [Material Qr](https://play.google.com/store/apps/details?id=qrreader.com.studios.it.qrreader)
