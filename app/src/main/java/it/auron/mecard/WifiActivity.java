@@ -37,5 +37,7 @@ public class WifiActivity extends AppCompatActivity {
 
         textView.setText(wifiCardcontent);
         imageView.setImageBitmap(QRCode.from(wifiCardcontent).bitmap());
+
+       
     }
 }

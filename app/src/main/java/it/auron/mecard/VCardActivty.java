@@ -31,10 +31,10 @@ public class VCardActivty extends AppCompatActivity {
                 "N:Luca\n" +
                 "FN:Rurio Luca\n" +
                 "ORG:freelancer\n" +
-            //   "URL:https\\://github.com/RurioLuca/MeCardParsing\n" +
                 "TITLE:Developer\n" +
                 "EMAIL:rurio.luca@gmail.com\n" +
                 "END:VCARD";
+
         VCard vCard = VCardParser.parse(vCardString);
 
         vCard.setNote("vCard generate and modified!");
@@ -45,10 +45,6 @@ public class VCardActivty extends AppCompatActivity {
         imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
 
 
-        /*VCard vCard=new VCard();
-        vCard.setName("Rurio Luca");
-        vCard.setAddress("");
-    */
     }
 
 
