@@ -26,7 +26,7 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-compile 'it.auron:mecard-parser:1.0.1'
+compile 'it.auron:mecard-parser:1.0.2'
 }
 ```
 
