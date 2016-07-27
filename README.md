@@ -26,7 +26,7 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-upload in progrss..
+compile 'it.auron:mecard-parser:1.0.1'
 }
 ```
 
@@ -69,24 +69,50 @@ upload in progrss..
 
 
 #### Generate VCard content
+
 ```java
-      
+
+        VCard vCard=new VCard();
+        vCard.setName("Luca");
+        vCard.setAddress("via del corso");
+        vCard.setCompany("freelancer");
+        vCard.setEmail("rurio.luca@gmail.com");
+        vCard.setTelephone("+39 3486454314");
+        vCard.setFormattedName("Rurio Luca");
+        vCard.setTitle("Developer");
+        vCard.setUrl("https://github.com/RurioLuca/MeCardParsing/");
+        imageView.setImageBitmap(QRCode.from(vCard.buildString()).bitmap());
+        
 ```
 #### Parsing VCard content
 
 ```java
 
- 
+ String vCardString = "BEGIN:VCARD\n" +
+                "N:Luca\n" +
+                "FN:Rurio Luca\n" +
+                "ORG:freelancer\n" +
+                "TITLE:Developer\n" +
+                "EMAIL:rurio.luca@gmail.com\n" +
+                "END:VCARD";
+
         VCard vCard = VCardParser.parse(vCardString);
 
         vCard.setNote("vCard generate and modified!");
-        vCard.setPhoneNumber("+39 3486454314");
-
+        vCard.setTelephone("+39 3486454314");
         String vCardcontent = vCard.buildString();
-
-        //sample using QrGen to generate QrCode bitmap
+        //sample generate bitmap using QrGen
         imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
-  
+
+
+```
+
+#### Generate Wifi content
+
+```java
+
+    
+        
 ```
 
 ###Developed By
@@ -94,7 +120,7 @@ Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
 [![Linkedin](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/social/linkedin-icon.png) ](https://it.linkedin.com/in/luca-rurio-5a4462107)
 
-###App using MarshmallowPermissionManager
+###App using MeCardParsing
 =======
 
   * [Material Qr](https://play.google.com/store/apps/details?id=qrreader.com.studios.it.qrreader)
