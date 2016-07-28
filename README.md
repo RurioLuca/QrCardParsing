@@ -2,6 +2,8 @@
 
 [![Platform (Android)](https://img.shields.io/badge/platform-Android-blue.svg?style=flat-square)](http://www.android.com)
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QrCardParsing-green.svg?style=true)](https://android-arsenal.com/details/1/3978)
+
 Android Libraries to parsing and generate MeCard - VCard and WifiCard content string.
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
