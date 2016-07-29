@@ -4,6 +4,10 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QrCardParsing-green.svg?style=true)](https://android-arsenal.com/details/1/3978)
 
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/RurioLuca/QrCardParsing/blob/master/License)
+
+[![Codewake](https://www.codewake.com/badges/ask_question_flat_square.svg)](https://www.codewake.com/p/qrcardparsing)
+
 Android Libraries to parsing and generate MeCard - VCard and WifiCard content string.
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
