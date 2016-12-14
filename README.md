@@ -15,7 +15,7 @@ Android Libraries to parsing and generate MeCard - VCard and WifiCard content st
 
 ### Requirements
 
-The library requires Android **API Level 7+**.
+The library requires Android **API Level 9+**.
 
 
 ### Import
@@ -41,7 +41,8 @@ compile 'it.auron:mecard-parser:1.0.5'
 #### Generate MeCard content
 ```java
         MeCard meCard =new MeCard();
-        meCard.setName("Rurio Luca");
+        meCard.setName("Luca");
+        meCard.setSurname("Rurio");
         meCard.setDate("1989-07-19");
         meCard.setEmail("rurio.luca@gmail.com");
         meCard.setNote("generate MeCard string content!");
@@ -58,14 +59,16 @@ compile 'it.auron:mecard-parser:1.0.5'
 
 ```java
 
-   String meCardString = "MECARD:N:Rurio Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
+   String meCardString = "MECARD:N:Rurio,Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
        
    MeCard meCard = MeCardParser.parse(meCardString);
 
    String name = meCard.getName(); 
-   //output :Rurio Luca
-
-  meCard.setName("Luca Rurio");
+   //output :Luca
+    String name = meCard.getEmail(); 
+    //output :rurio.luca@gmail.com
+    
+  meCard.setDate("1989-07-19");
   String meCardContent=meCard.buildString();
   
    //sample using QrGen to generate QrCode bitmap
