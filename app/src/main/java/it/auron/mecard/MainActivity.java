@@ -13,6 +13,7 @@ import net.glxn.qrgen.android.QRCode;
 import it.auron.library.mecard.MeCard;
 import it.auron.library.mecard.MeCardParser;
 
+@SuppressWarnings("ConstantConditions")
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.qrcode);
         button = (Button) findViewById(R.id.btn);
         wifiButton= (Button) findViewById(R.id.btnwifi);
-        String meCardString = "MECARD:N:Rurio Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
+        String meCardString = "MECARD:N:Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
         MeCard meCard = MeCardParser.parse(meCardString);
 
+        meCard.setSurname("Rurio");
         meCard.setNote("MeCard generate and modified!");
         meCard.addTelephone("+39 3476512321");
 

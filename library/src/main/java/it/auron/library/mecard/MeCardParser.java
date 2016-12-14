@@ -55,7 +55,15 @@ public class MeCardParser {
     private static void executeParsing(MeCard meCard, String tokenparsing) {
 
         if (tokenparsing.startsWith(MeCardCostant.KEY_NAME)) {
-            meCard.setName(tokenparsing.substring(MeCardCostant.KEY_NAME.length(), tokenparsing.length()));
+           String name = tokenparsing.substring(MeCardCostant.KEY_NAME.length(), tokenparsing.length());
+            if(name.contains(",")){
+               String part[]=name.split(",");
+                meCard.setSurname(part[0]);
+                meCard.setName(part[1]);
+            }else{
+                meCard.setName(name);
+            }
+
         }
 
         if (tokenparsing.startsWith(MeCardCostant.KEY_ADDRESS)) {

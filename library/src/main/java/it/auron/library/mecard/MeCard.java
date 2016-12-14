@@ -36,6 +36,7 @@ import java.util.List;
 public class MeCard {
 
     private String name;
+    private String surname;
     private String address;
     private String email;
     private List<String> telephones;
@@ -50,6 +51,14 @@ public class MeCard {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getAddress() {
@@ -114,9 +123,17 @@ public class MeCard {
         meCardString.append(MeCardCostant.KEY_MECARD);
 
         if (!TextUtils.isEmpty(name)) {
-            meCardString.append(MeCardCostant.KEY_NAME)
-                    .append(name)
-                    .append(";");
+            if (!TextUtils.isEmpty(surname)) {
+                meCardString.append(MeCardCostant.KEY_NAME)
+                        .append(surname)
+                        .append(",")
+                        .append(name)
+                        .append(";");
+            } else {
+                meCardString.append(MeCardCostant.KEY_NAME)
+                        .append(name)
+                        .append(";");
+            }
         }
 
         if (!TextUtils.isEmpty(address)) {
@@ -147,8 +164,7 @@ public class MeCard {
                     .append(email)
                     .append(";");
         }
-        if (telephones != null)
-
+        if (telephones != null) {
             for (String telephone : telephones) {
 
                 meCardString.append(MeCardCostant.KEY_TELEPHONE)
@@ -156,6 +172,7 @@ public class MeCard {
                         .append(";");
 
             }
+        }
 
 
         return meCardString.toString();
