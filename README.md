@@ -147,12 +147,12 @@ compile 'it.auron:mecard-parser:1.0.6'
 
 
 ```
-###Developed By
+### Developed By
 Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
 [![Linkedin](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/social/linkedin-icon.png) ](https://it.linkedin.com/in/luca-rurio-5a4462107)
 
-###App using QrCardParsing
+### App using QrCardParsing
 =======
 
   * [Material Qr](https://play.google.com/store/apps/details?id=qrreader.com.studios.it.qrreader)
