@@ -38,6 +38,7 @@ public class MeCardCostant {
     public static final String KEY_URL = "URL:";
     public static final String KEY_NOTE = "NOTE:";
     public static final String KEY_DAY = "DAY:";
+    public static final String KEY_ORG = "ORG:";
 
 
 }

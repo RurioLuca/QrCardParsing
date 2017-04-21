@@ -3,13 +3,13 @@ apply plugin: 'bintray-release'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.0.6"
+        versionCode 6
+        versionName "1.0.7"
     }
     buildTypes {
         release {
@@ -21,10 +21,10 @@ android {
         userOrg = 'auron'
         groupId = 'it.auron'
         artifactId = 'mecard-parser'
-        publishVersion = '1.0.6'
+        publishVersion = '1.0.7'
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
 }

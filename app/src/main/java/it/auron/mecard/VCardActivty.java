@@ -33,6 +33,7 @@ public class VCardActivty extends AppCompatActivity {
                 "ORG:freelancer\n" +
                 "TITLE:Developer\n" +
                 "EMAIL:rurio.luca@gmail.com\n" +
+                "URL:https://yoursite.com\n" +
                 "END:VCARD";
 
         VCard vCard = VCardParser.parse(vCardString);

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.qrcode);
         button = (Button) findViewById(R.id.btn);
         wifiButton= (Button) findViewById(R.id.btnwifi);
-        String meCardString = "MECARD:N:Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
+        String meCardString = "MECARD:N:Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;ORG:your company;";
         MeCard meCard = MeCardParser.parse(meCardString);
 
         meCard.setSurname("Rurio");

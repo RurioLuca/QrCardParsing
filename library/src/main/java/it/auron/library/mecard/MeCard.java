@@ -43,6 +43,7 @@ public class MeCard {
     private String url;
     private String note;
     private String date;
+    private String org;
 
 
     public String getName() {
@@ -117,6 +118,14 @@ public class MeCard {
         this.date = date;
     }
 
+    public void setOrg(String org) {
+        this.org = org;
+    }
+
+    public String getOrg() {
+        return org;
+    }
+
     public String buildString() {
 
         StringBuilder meCardString = new StringBuilder();
@@ -173,7 +182,11 @@ public class MeCard {
 
             }
         }
-
+        if (!TextUtils.isEmpty(org)) {
+            meCardString.append(MeCardCostant.KEY_ORG)
+                    .append(org)
+                    .append(";");
+        }
 
         return meCardString.toString();
 

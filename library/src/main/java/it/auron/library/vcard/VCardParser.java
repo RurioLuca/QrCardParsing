@@ -49,7 +49,10 @@ package it.auron.library.vcard;
  * SOFTWARE.
  */
 
+import android.util.Log;
+
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.StringTokenizer;
 
@@ -129,10 +132,14 @@ public class VCardParser {
 
             String value[] = s.split(VCardCostant.KEY_SPLIT);
 
-            if (value.length >= 2) {
-                map.put(value[0], value[1]);
+            if (value.length == 2) {
+                    map.put(value[0], value[1]);
             }
-        }
+            if(value.length >2 && value[0].equals(VCardCostant.KEY_WEB)){
+                    map.put(value[0], value[1]+":"+value[2]);
+                }
+            }
+
 
         return map;
     }

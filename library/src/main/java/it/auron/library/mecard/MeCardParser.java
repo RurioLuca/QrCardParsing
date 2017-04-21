@@ -44,9 +44,8 @@ public class MeCardParser {
 
         StringTokenizer st = new StringTokenizer(meCardContent, ";");
         while (st.hasMoreTokens()) {
-            executeParsing(meCard,st.nextToken());
+            executeParsing(meCard, st.nextToken());
         }
-
 
 
         return meCard;
@@ -55,12 +54,12 @@ public class MeCardParser {
     private static void executeParsing(MeCard meCard, String tokenparsing) {
 
         if (tokenparsing.startsWith(MeCardCostant.KEY_NAME)) {
-           String name = tokenparsing.substring(MeCardCostant.KEY_NAME.length(), tokenparsing.length());
-            if(name.contains(",")){
-               String part[]=name.split(",");
+            String name = tokenparsing.substring(MeCardCostant.KEY_NAME.length(), tokenparsing.length());
+            if (name.contains(",")) {
+                String part[] = name.split(",");
                 meCard.setSurname(part[0]);
                 meCard.setName(part[1]);
-            }else{
+            } else {
                 meCard.setName(name);
             }
 
@@ -69,7 +68,6 @@ public class MeCardParser {
         if (tokenparsing.startsWith(MeCardCostant.KEY_ADDRESS)) {
             meCard.setAddress(tokenparsing.substring(MeCardCostant.KEY_ADDRESS.length(), tokenparsing.length()));
         }
-
         if (tokenparsing.startsWith(MeCardCostant.KEY_TELEPHONE)) {
             meCard.addTelephone(tokenparsing.substring(MeCardCostant.KEY_TELEPHONE.length(), tokenparsing.length()));
         }
@@ -84,6 +82,9 @@ public class MeCardParser {
         }
         if (tokenparsing.startsWith(MeCardCostant.KEY_DAY)) {
             meCard.setDate(tokenparsing.substring(MeCardCostant.KEY_DAY.length(), tokenparsing.length()));
+        }
+        if (tokenparsing.startsWith(MeCardCostant.KEY_ORG)) {
+            meCard.setOrg(tokenparsing.substring(MeCardCostant.KEY_ORG.length(), tokenparsing.length()));
         }
     }
 
