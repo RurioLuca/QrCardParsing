@@ -32,7 +32,7 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-compile 'it.auron:mecard-parser:1.0.6'
+compile 'it.auron:mecard-parser:1.0.7'
 }
 ```
 
@@ -50,6 +50,7 @@ compile 'it.auron:mecard-parser:1.0.6'
         meCard.addTelephone("+39 3476512321");
         meCard.setUrl("https://github.com/RurioLuca");
         meCard.setAddress("via del corso , Rome , Italy");
+        meCard.setOrg("your company");
         String meCardContent=meCard.buildString();
         
         //sample using QrGen to generate QrCode bitmap
@@ -59,7 +60,7 @@ compile 'it.auron:mecard-parser:1.0.6'
 
 ```java
 
-   String meCardString = "MECARD:N:Rurio,Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;";
+   String meCardString = "MECARD:N:Rurio,Luca;TEL:+39 3486454313;EMAIL:rurio.luca@gmail.com;URL:https://github.com/RurioLuca;NOTE:generate MeCard!;BDAY:1989-07-19;ADR:via del corso , Rome , Italy;ORG:your company;";
        
    MeCard meCard = MeCardParser.parse(meCardString);
 
@@ -103,6 +104,7 @@ compile 'it.auron:mecard-parser:1.0.6'
                 "ORG:freelancer\n" +
                 "TITLE:Developer\n" +
                 "EMAIL:rurio.luca@gmail.com\n" +
+                "URL:https://yoursite.com\n" +
                 "END:VCARD";
 
         VCard vCard = VCardParser.parse(vCardString);
