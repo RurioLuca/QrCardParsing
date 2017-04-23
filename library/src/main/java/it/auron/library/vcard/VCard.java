@@ -25,6 +25,9 @@ package it.auron.library.vcard;
 
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by luca on 7/26/16.
  */
@@ -39,9 +42,9 @@ public class VCard {
 
     private String title;
 
-    private String telephone;
+    private List<String> telephone = new ArrayList<>();
 
-    private String email;
+    private List<String> email = new ArrayList<>();
 
     private String address;
 
@@ -74,14 +77,6 @@ public class VCard {
     }
 
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -90,13 +85,6 @@ public class VCard {
         this.address = address;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 
     public String getUrl() {
         return url;
@@ -121,6 +109,57 @@ public class VCard {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public List<String> getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(List<String> telephone) {
+        this.telephone = telephone;
+    }
+
+
+    public void addTelephone(String telephone) {
+        this.telephone.add(telephone);
+    }
+
+    public void removeTelephone(String telephone) {
+        for (int i = 0; i < this.telephone.size(); i++) {
+            if (this.telephone.get(i).equals(telephone)) {
+                this.telephone.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void removTelephone(int index) {
+        this.telephone.remove(index);
+    }
+
+    public List<String> getEmail() {
+        return email;
+    }
+
+    public void setEmail(List<String> email) {
+        this.email = email;
+    }
+
+    public void addEmail(String email) {
+        this.email.add(email);
+    }
+
+    public void removeEmail(String email) {
+        for (int i = 0; i < this.email.size(); i++) {
+            if (this.email.get(i).equals(email)) {
+                this.email.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void removeEmail(int index) {
+        this.email.remove(index);
     }
 
     public String buildString() {
@@ -157,15 +196,20 @@ public class VCard {
             meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_NOTE).append(":").append(note);
         }
 
-
-        if (!TextUtils.isEmpty(email)) {
-            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(email);
-
+        if (email.size() != 0) {
+            for (String s : email) {
+                if (!TextUtils.isEmpty(s)) {
+                    meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(s);
+                }
+            }
         }
 
-        if (!TextUtils.isEmpty(telephone)) {
-            meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_PHONE).append(":").append(telephone);
-
+        if (telephone.size() != 0) {
+            for (String s : telephone) {
+                if (!TextUtils.isEmpty(s)) {
+                    meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(s);
+                }
+            }
         }
 
         meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_END_VCARD);

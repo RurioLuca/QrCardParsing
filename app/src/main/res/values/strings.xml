@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MeCard</string>
+    <string name="the_content_of_qr_code">the content of qr code:</string>
+    <string name="content_qr_code">content qr code</string>
+    <string name="wificard">WifiCard</string>
+    <string name="vcard">VCARD</string>
 </resources>

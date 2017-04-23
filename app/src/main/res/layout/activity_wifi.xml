@@ -13,7 +13,7 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="the content of qr code: " />
+        android:text="@string/the_content_of_qr_code" />
 
 
         <TextView
@@ -21,7 +21,7 @@
         android:id="@+id/wificard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="content qr code" />
+        android:text="@string/content_qr_code" />
 
 
     <ImageView

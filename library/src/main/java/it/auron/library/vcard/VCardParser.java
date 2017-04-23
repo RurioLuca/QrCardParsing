@@ -105,7 +105,7 @@ public class VCardParser {
         }
 
         if (vCardValue.containsKey(VCardCostant.KEY_EMAIL)) {
-            vCard.setEmail(vCardValue.get(VCardCostant.KEY_EMAIL));
+            vCard.addEmail(vCardValue.get(VCardCostant.KEY_EMAIL));
         }
 
         if (vCardValue.containsKey(VCardCostant.KEY_WEB)) {
@@ -113,7 +113,7 @@ public class VCardParser {
         }
 
         if (vCardValue.containsKey(VCardCostant.KEY_PHONE)) {
-            vCard.setTelephone(vCardValue.get(VCardCostant.KEY_PHONE));
+            vCard.addTelephone(vCardValue.get(VCardCostant.KEY_PHONE));
         }
 
         if (vCardValue.containsKey(VCardCostant.KEY_NOTE)) {
@@ -135,6 +135,7 @@ public class VCardParser {
             if (value.length == 2) {
                     map.put(value[0], value[1]);
             }
+
             if(value.length >2 && value[0].equals(VCardCostant.KEY_WEB)){
                     map.put(value[0], value[1]+":"+value[2]);
                 }

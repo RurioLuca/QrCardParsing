@@ -13,23 +13,24 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="the content of qr code: " />
+        android:text="@string/the_content_of_qr_code" />
 
 
-        <TextView
-        android:layout_below="@+id/text"
+    <TextView
         android:id="@+id/vcard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="content qr code" />
+        android:layout_below="@+id/text"
+        android:text="@string/content_qr_code" />
 
 
     <ImageView
-        android:layout_centerInParent="true"
         android:id="@+id/qrcode"
         android:layout_width="200dp"
-        android:layout_height="200dp" />
-
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp" />
 
 
 </RelativeLayout>

@@ -39,7 +39,9 @@ public class VCardActivty extends AppCompatActivity {
         VCard vCard = VCardParser.parse(vCardString);
 
         vCard.setNote("vCard generate and modified!");
-        vCard.setTelephone("+39 3486454314");
+        vCard.addTelephone("+39 3486454314");
+        vCard.addTelephone("+39 3486488888");
+        vCard.addEmail("rurio.luca@github.com");
         String vCardcontent = vCard.buildString();
 
         textView.setText(vCardcontent);
