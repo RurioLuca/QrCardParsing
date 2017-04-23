@@ -8,7 +8,7 @@
     <string name="library_qrcardparsing_libraryName">QrCardParsing</string>
     <string name="library_qrcardparsing_libraryDescription">Parsing and generate MeCard,VCard and Wifi Card Content</string>
     <string name="library_qrcardparsing_libraryWebsite">https://github.com/RurioLuca/QrCardParsing</string>
-    <string name="library_qrcardparsing_libraryVersion">1.0.8</string>
+    <string name="library_qrcardparsing_libraryVersion">1.0.9</string>
     <string name="library_qrcardparsing_isOpenSource">true</string>
     <string name="library_qrcardparsing_repositoryLink">https://github.com/RurioLuca/QrCardParsing</string>
     <string name="library_qrcardparsing_classPath">it.auron.library</string>

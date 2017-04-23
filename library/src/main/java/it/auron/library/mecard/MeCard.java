@@ -39,7 +39,7 @@ public class MeCard {
     private String surname;
     private String address;
     private String email;
-    private List<String> telephones;
+    private List<String> telephones=new ArrayList<>();
     private String url;
     private String note;
     private String date;
@@ -86,12 +86,31 @@ public class MeCard {
         this.telephones = telephones;
     }
 
-    public void addTelephone(String telephone) {
-        if (telephones == null) {
-            telephones = new ArrayList<>();
+    public void setTelephone(String oldNumber, String newNumber) {
+        for (int i = 0; i < this.telephones.size(); i++) {
+            if (this.telephones.get(i).equals(oldNumber)) {
+                this.telephones.set(i, newNumber);
+            }
         }
+    }
+
+    public void addTelephone(String telephone) {
+
         telephones.add(telephone);
     }
+    public void removeTelephone(String telephone) {
+        for (int i = 0; i < this.telephones.size(); i++) {
+            if (this.telephones.get(i).equals(telephone)) {
+                this.telephones.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void removTelephone(int index) {
+        this.telephones.remove(index);
+    }
+
 
     public String getUrl() {
         return url;

@@ -42,9 +42,9 @@ public class VCard {
 
     private String title;
 
-    private List<String> telephone = new ArrayList<>();
+    private List<String> telephones = new ArrayList<>();
 
-    private List<String> email = new ArrayList<>();
+    private List<String> emails = new ArrayList<>();
 
     private String address;
 
@@ -111,55 +111,70 @@ public class VCard {
         this.note = note;
     }
 
-    public List<String> getTelephone() {
-        return telephone;
+    public List<String> getTelephones() {
+        return telephones;
     }
 
-    public void setTelephone(List<String> telephone) {
-        this.telephone = telephone;
+    public void setTelephones(List<String> telephones) {
+        this.telephones = telephones;
     }
 
+    public void setTelephone(String oldNumber, String newNumber) {
+        for (int i = 0; i < this.telephones.size(); i++) {
+            if (this.telephones.get(i).equals(oldNumber)) {
+                this.telephones.set(i, newNumber);
+            }
+        }
+    }
 
     public void addTelephone(String telephone) {
-        this.telephone.add(telephone);
+        this.telephones.add(telephone);
     }
 
     public void removeTelephone(String telephone) {
-        for (int i = 0; i < this.telephone.size(); i++) {
-            if (this.telephone.get(i).equals(telephone)) {
-                this.telephone.remove(i);
+        for (int i = 0; i < this.telephones.size(); i++) {
+            if (this.telephones.get(i).equals(telephone)) {
+                this.telephones.remove(i);
                 break;
             }
         }
     }
 
     public void removTelephone(int index) {
-        this.telephone.remove(index);
+        this.telephones.remove(index);
     }
 
-    public List<String> getEmail() {
-        return email;
+    public List<String> getEmails() {
+        return emails;
     }
 
-    public void setEmail(List<String> email) {
-        this.email = email;
+    public void setEmails(List<String> emails) {
+        this.emails = emails;
+    }
+
+    public void setEmail(String oldEmail, String newEmail) {
+        for (int i = 0; i < this.emails.size(); i++) {
+            if (this.emails.get(i).equals(oldEmail)) {
+                this.emails.set(i, newEmail);
+            }
+        }
     }
 
     public void addEmail(String email) {
-        this.email.add(email);
+        this.emails.add(email);
     }
 
     public void removeEmail(String email) {
-        for (int i = 0; i < this.email.size(); i++) {
-            if (this.email.get(i).equals(email)) {
-                this.email.remove(i);
+        for (int i = 0; i < this.emails.size(); i++) {
+            if (this.emails.get(i).equals(email)) {
+                this.emails.remove(i);
                 break;
             }
         }
     }
 
     public void removeEmail(int index) {
-        this.email.remove(index);
+        this.emails.remove(index);
     }
 
     public String buildString() {
@@ -196,16 +211,16 @@ public class VCard {
             meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_NOTE).append(":").append(note);
         }
 
-        if (email.size() != 0) {
-            for (String s : email) {
+        if (emails.size() != 0) {
+            for (String s : emails) {
                 if (!TextUtils.isEmpty(s)) {
                     meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(s);
                 }
             }
         }
 
-        if (telephone.size() != 0) {
-            for (String s : telephone) {
+        if (telephones.size() != 0) {
+            for (String s : telephones) {
                 if (!TextUtils.isEmpty(s)) {
                     meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(s);
                 }
