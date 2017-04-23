@@ -32,7 +32,7 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-compile 'it.auron:mecard-parser:1.0.7'
+compile 'it.auron:mecard-parser:1.0.9'
 }
 ```
 
@@ -86,8 +86,8 @@ compile 'it.auron:mecard-parser:1.0.7'
         vCard.setName("Luca");
         vCard.setAddress("via del corso");
         vCard.setCompany("freelancer");
-        vCard.setEmail("rurio.luca@gmail.com");
-        vCard.setTelephone("+39 3486454314");
+        vCard.addEmail("rurio.luca@gmail.com");
+        vCard.addTelephone("+39 3486454314");
         vCard.setFormattedName("Rurio Luca");
         vCard.setTitle("Developer");
         vCard.setUrl("https://github.com/RurioLuca/MeCardParsing/");
@@ -110,7 +110,7 @@ compile 'it.auron:mecard-parser:1.0.7'
         VCard vCard = VCardParser.parse(vCardString);
 
         vCard.setNote("vCard generate and modified!");
-        vCard.setTelephone("+39 3486454314");
+        vCard.addTelephone("+39 3486454314");
         String vCardcontent = vCard.buildString();
         //sample generate bitmap using QrGen
         imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
