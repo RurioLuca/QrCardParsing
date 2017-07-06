@@ -8,7 +8,7 @@
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)
  [![GitHub stars](https://img.shields.io/github/stars/RurioLuca/QrCardParsing.svg)](https://github.com/RurioLuca/QrCardParsing/stargazers)
  
-Android Libraries to parsing and generate MeCard - VCard and WifiCard content string.
+Android Libraries to parsing and generate MeCard, VCard, VEvent and WifiCard content string.
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
 
@@ -32,7 +32,7 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-compile 'it.auron:mecard-parser:1.0.9'
+compile 'it.auron:mecard-parser:1.1.0'
 }
 ```
 
@@ -149,6 +149,57 @@ compile 'it.auron:mecard-parser:1.0.9'
 
 
 ```
+
+#### Generate VEvent content
+
+```java
+
+        WifiCard wifiCard = new WifiCard();
+        wifiCard.setSid("Vodafone Wifi32341");
+        wifiCard.setPassword("administrator");
+        wifiCard.setType("WPA");
+        
+         //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(wifiCard.buildString()).bitmap());
+        
+```
+
+#### Parsing VEvent content
+
+```java
+
+        String vEventString = "BEGIN:VEVENT\n" +
+                "SUMMARY:Google IO\n" +
+                "LOCATION:Shoreline Amphitheatre Mountain View, California\n" +
+                "DTSTART:20170611T130000Z\n" +
+                "DTEND:20170611T153400Z\n" +
+                "END:VEVENT";
+                
+       VEvent vEvent = VEventParser.parse(vEventString);
+       vEvent.setSummary("Google I/O");
+      
+      SimpleDateFormat simpleDateFormat = new SimpleDateFormat(VEventCostant.DATE_FORMAT);
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(simpleDateFormat.parse(vEvent.getDtEnd()));
+            calendar.set(Calendar.DAY_OF_MONTH, 12);
+            calendar.set(Calendar.HOUR_OF_DAY, 14);
+            calendar.set(Calendar.MINUTE, 00);
+            vEvent.setDtEnd(simpleDateFormat.format(calendar.getTime()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+
+
+        String vEventcontent = vEvent.buildString();
+
+        //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(vEventcontent).bitmap());
+
+
+```
+
 ### Developed By
 Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
