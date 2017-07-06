@@ -154,13 +154,15 @@ compile 'it.auron:mecard-parser:1.1.0'
 
 ```java
 
-        WifiCard wifiCard = new WifiCard();
-        wifiCard.setSid("Vodafone Wifi32341");
-        wifiCard.setPassword("administrator");
-        wifiCard.setType("WPA");
+        VEvent vEvent = new VEvent();
+        vEvent.Summary("Google IO");
+        vEvent.Location("Shoreline Amphitheatre Mountain View, California");
+        vEvent.Url("www.sample.com");
+        vEvent.setDtStart("20170611T130000Z");
+        vEvent.setDtEnd("20170611T153400Z");
         
          //sample generate Qr code using Qrgen
-        imageView.setImageBitmap(QRCode.from(wifiCard.buildString()).bitmap());
+        imageView.setImageBitmap(QRCode.from(vEvent.buildString()).bitmap());
         
 ```
 
