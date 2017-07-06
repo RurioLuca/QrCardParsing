@@ -37,7 +37,6 @@ public class VCard {
 
     private String formattedName;
 
-
     private String company;
 
     private String title;

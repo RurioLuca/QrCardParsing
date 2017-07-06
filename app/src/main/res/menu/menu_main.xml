@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="permission.auron.com.samplemarshmallowpermissionhelper.MainActivity">
+
+
+    <item
+        android:id="@+id/meCard"
+        android:orderInCategory="101"
+        android:title="@string/SampleMeCard"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/vcard"
+        android:orderInCategory="104"
+        android:title="@string/SampleVCard"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/wifiCard"
+        android:orderInCategory="102"
+        android:title="@string/SampleWifiCard"
+        app:showAsAction="never" />
+
+
+
+    <item
+        android:id="@+id/vevent"
+        android:orderInCategory="104"
+        android:title="@string/SampleVEvent"
+        app:showAsAction="never" />
+
+
+</menu>

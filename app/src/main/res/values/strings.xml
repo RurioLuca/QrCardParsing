@@ -4,4 +4,10 @@
     <string name="content_qr_code">content qr code</string>
     <string name="wificard">WifiCard</string>
     <string name="vcard">VCARD</string>
+    <string name="vevent">VEVENT</string>
+    <string name="add_to_calendar">ADD TO CALENDAR</string>
+    <string name="SampleMeCard">Sample MeCard</string>
+    <string name="SampleVCard">Sample VCard</string>
+    <string name="SampleWifiCard">Sampe Wifi Card</string>
+    <string name="SampleVEvent">Sample VEvent</string>
 </resources>

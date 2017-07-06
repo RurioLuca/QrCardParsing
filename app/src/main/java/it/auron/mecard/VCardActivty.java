@@ -1,7 +1,11 @@
 package it.auron.mecard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +27,7 @@ public class VCardActivty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vcard);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("VCard");
         textView = (TextView) findViewById(R.id.vcard);
         imageView = (ImageView) findViewById(R.id.qrcode);
@@ -48,6 +53,40 @@ public class VCardActivty extends AppCompatActivity {
         imageView.setImageBitmap(QRCode.from(vCardcontent).bitmap());
 
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        this.finish();
+        return super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mecard:
+                this.finish();
+                return true;
+            case R.id.wifiCard:
+                startActivity(new Intent(VCardActivty.this, WifiActivity.class));
+                this.finish();
+                return true;
+            case R.id.vcard:
+                return true;
+            case R.id.vevent:
+                startActivity(new Intent(VCardActivty.this, VEventActivity.class));
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
