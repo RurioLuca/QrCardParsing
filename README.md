@@ -15,7 +15,7 @@ Android Libraries to parsing and generate MeCard, VCard, VEvent and WifiCard con
 
 ### Requirements
 
-The library requires Android **API Level 9+**.
+The library requires Android **API Level 14+**.
 
 
 ### Import
@@ -32,7 +32,8 @@ allprojects {
 ```
 ```Gradle
 dependencies {
-compile 'it.auron:mecard-parser:1.1.0'
+// ... other dependencies here
+implementation 'it.auron:mecard-parser:1.1.1'
 }
 ```
 
