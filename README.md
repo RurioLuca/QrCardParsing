@@ -3,7 +3,7 @@
 [![Platform (Android)](https://img.shields.io/badge/platform-Android-blue.svg?style=flat-square)](http://www.android.com)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QrCardParsing-green.svg?style=true)](https://android-arsenal.com/details/1/3978)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/RurioLuca/QrCardParsing/blob/master/License)
-[![Codewake](https://www.codewake.com/badges/ask_question_flat_square.svg)](https://www.codewake.com/p/qrcardparsing)
+<!-- [![Codewake](https://www.codewake.com/badges/ask_question_flat_square.svg)](https://www.codewake.com/p/qrcardparsing) -->
 [ ![Download](https://api.bintray.com/packages/auron/maven/mecard-parser/images/download.svg) ](https://bintray.com/auron/maven/mecard-parser/_latestVersion) 
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)
  [![GitHub stars](https://img.shields.io/github/stars/RurioLuca/QrCardParsing.svg)](https://github.com/RurioLuca/QrCardParsing/stargazers)
