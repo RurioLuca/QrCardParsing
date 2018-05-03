@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.GeolocationPermissions;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -82,6 +83,10 @@ public class VCardActivty extends AppCompatActivity {
                 return true;
             case R.id.vevent:
                 startActivity(new Intent(VCardActivty.this, VEventActivity.class));
+                this.finish();
+                return true;
+            case R.id.geocard:
+                startActivity(new Intent(VCardActivty.this, GeoCardActivity.class));
                 this.finish();
                 return true;
             default:

@@ -2,6 +2,7 @@ package it.auron.mecard;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,36 +12,33 @@ import android.widget.TextView;
 
 import net.glxn.qrgen.android.QRCode;
 
-import it.auron.library.wifi.WifiCard;
-import it.auron.library.wifi.WifiCardParser;
+import it.auron.library.geolocation.GeoCard;
+import it.auron.library.geolocation.GeoCardParser;
 
-/**
- * Created by luca on 7/26/16.
- */
-public class WifiActivity extends AppCompatActivity {
+public class GeoCardActivity extends AppCompatActivity {
 
     private TextView textView;
     private ImageView imageView;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wifi);
-        setTitle("WifiCard");
-        textView = (TextView) findViewById(R.id.wificard);
+        setContentView(R.layout.activity_geo);
+        setTitle("GeolocationCard");
+        textView = (TextView) findViewById(R.id.geocard);
         imageView = (ImageView) findViewById(R.id.qrcode);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        String wifiString = "WIFI:S:Vodafone Wifi32341;T:WPA;P:administrator;;";
-        WifiCard wifiCard = WifiCardParser.parse(wifiString);
+        String geoString = "geo:20.33470,20.39448";
+        GeoCard geoCard = GeoCardParser.parse(geoString);
 
-        wifiCard.setPassword("administrator2016");
+        geoCard.setLat(41.8919300);
+        geoCard.setLon(12.5113300);
 
 
-        String wifiCardcontent = wifiCard.buildString();
+        String geoCardcontent = geoCard.buildString();
 
-        textView.setText(wifiCardcontent);
-        imageView.setImageBitmap(QRCode.from(wifiCardcontent).bitmap());
+        textView.setText(geoCardcontent);
+        imageView.setImageBitmap(QRCode.from(geoCardcontent).bitmap());
 
 
     }
@@ -65,22 +63,23 @@ public class WifiActivity extends AppCompatActivity {
                 this.finish();
                 return true;
             case R.id.wifiCard:
-
+                startActivity(new Intent(GeoCardActivity.this, VCardActivty.class));
+                this.finish();
                 return true;
             case R.id.vcard:
-                startActivity(new Intent(WifiActivity.this, VCardActivty.class));
+                startActivity(new Intent(GeoCardActivity.this, VCardActivty.class));
                 this.finish();
                 return true;
             case R.id.vevent:
-                startActivity(new Intent(WifiActivity.this, VEventActivity.class));
+                startActivity(new Intent(GeoCardActivity.this, VEventActivity.class));
                 this.finish();
                 return true;
             case R.id.geocard:
-                startActivity(new Intent(WifiActivity.this, GeoCardActivity.class));
-                this.finish();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

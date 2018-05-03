@@ -102,7 +102,10 @@ public class VEventActivity extends AppCompatActivity {
                 this.finish();
                 return true;
             case R.id.vevent:
-
+                return true;
+            case R.id.geocard:
+                startActivity(new Intent(VEventActivity.this, GeoCardActivity.class));
+                this.finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

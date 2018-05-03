@@ -7,6 +7,7 @@ import android.text.TextUtils;
  */
 
 public class VEvent {
+
     private String summary;
     private String location;
     private String url;
@@ -84,7 +85,8 @@ public class VEvent {
         return vEventString.toString();
 
     }
-/*
+
+    /*
     public void addToCalendar(Context context) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(VEventCostant.DATE_FORMAT);
         ContentResolver cr = context.getContentResolver();

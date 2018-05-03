@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.vevent :
                 startActivity(new Intent(MainActivity.this, VEventActivity.class));
                 return true;
+            case R.id.geocard:
+                startActivity(new Intent(MainActivity.this, GeoCardActivity.class));
+                this.finish();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

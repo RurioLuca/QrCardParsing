@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="it.auron.mecard">
+
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <application
         android:allowBackup="true"
@@ -18,6 +19,7 @@
         <activity android:name=".VCardActivty" />
         <activity android:name=".WifiActivity" />
         <activity android:name=".VEventActivity" />
+        <activity android:name=".GeoCardActivity" />
     </application>
 
 </manifest>

@@ -10,4 +10,5 @@
     <string name="SampleVCard">Sample VCard</string>
     <string name="SampleWifiCard">Sampe Wifi Card</string>
     <string name="SampleVEvent">Sample VEvent</string>
+    <string name="SampleGeolocation">Sample Geolocation</string>
 </resources>

@@ -30,5 +30,11 @@
         android:title="@string/SampleVEvent"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/geocard"
+        android:orderInCategory="105"
+        android:title="@string/SampleGeolocation"
+        app:showAsAction="never" />
+
 
 </menu>
