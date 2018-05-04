@@ -5,17 +5,23 @@
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/RurioLuca/QrCardParsing/blob/master/License)
 <!-- [![Codewake](https://www.codewake.com/badges/ask_question_flat_square.svg)](https://www.codewake.com/p/qrcardparsing) -->
 [ ![Download](https://api.bintray.com/packages/auron/maven/mecard-parser/images/download.svg) ](https://bintray.com/auron/maven/mecard-parser/_latestVersion) 
-[![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
+[![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)
  [![GitHub stars](https://img.shields.io/github/stars/RurioLuca/QrCardParsing.svg)](https://github.com/RurioLuca/QrCardParsing/stargazers)
  
-Android Libraries to parsing and generate MeCard, VCard, VEvent and WifiCard content string.
+Android Libraries to parsing and generate content of:
+
+- MeCard
+- VCard
+- VEvent
+- WifiCard 
+- GeoCard
 
 ![Screen](https://raw.githubusercontent.com/RurioLuca/MeCardParsing/master/img/screen.png)
 
 
 ### Requirements
 
-The library requires Android **API Level 14+**.
+The library requires Android **API Level 9+**.
 
 
 ### Import
@@ -33,7 +39,7 @@ allprojects {
 ```Gradle
 dependencies {
 // ... other dependencies here
-implementation 'it.auron:mecard-parser:1.1.1'
+implementation 'it.auron:mecard-parser:1.1.2'
 }
 ```
 
@@ -199,6 +205,40 @@ implementation 'it.auron:mecard-parser:1.1.1'
 
         //sample generate Qr code using Qrgen
         imageView.setImageBitmap(QRCode.from(vEventcontent).bitmap());
+
+
+```
+
+#### Generate Geolocation content
+
+```java
+
+        GeoCard geoCard = new GeoCard();
+
+        geoCard.setLat(41.8919300);
+        geoCard.setLon(12.5113300);
+        
+         //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(geoCard.buildString()).bitmap());
+        
+```
+
+#### Parsing Geolocation content
+
+```java
+
+      String geoString = "geo:20.33470,20.39448";
+      GeoCard geoCard = GeoCardParser.parse(geoString);
+       
+       // set Rome location
+       geoCard.setLat(41.8919300);
+       geoCard.setLon(12.5113300);
+
+
+        String geoCardcontent = geoCard.buildString();
+
+        //sample generate Qr code using Qrgen
+        imageView.setImageBitmap(QRCode.from(geoCardcontent).bitmap());
 
 
 ```
