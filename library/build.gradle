@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 27
-        versionCode 10
-        versionName "1.1.1"
+        versionCode 11
+        versionName "1.1.2"
     }
     buildTypes {
         release {
@@ -19,7 +19,7 @@ android {
         userOrg = 'auron'
         groupId = 'it.auron'
         artifactId = 'mecard-parser'
-        publishVersion = '1.1.1'
+        publishVersion = '1.1.2'
     }
 }
 
