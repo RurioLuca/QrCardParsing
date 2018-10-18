@@ -221,7 +221,7 @@ public class VCard {
         if (telephones.size() != 0) {
             for (String s : telephones) {
                 if (!TextUtils.isEmpty(s)) {
-                    meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_EMAIL).append(":").append(s);
+                    meCardString.append(VCardCostant.KEY_LINE_ESCAPE).append(VCardCostant.KEY_PHONE).append(":").append(s);
                 }
             }
         }
