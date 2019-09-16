@@ -252,6 +252,7 @@ Rurio Luca- [rurio.luca@gmail.com](mailto:rurio.luca@gmail.com)
 
 
   * [Material Qr](https://play.google.com/store/apps/details?id=qrreader.com.studios.it.qrreader)
+  * [Mercatini Usato](https://play.google.com/store/apps/details?id=it.auron.mercatino&hl=it)
 
 send me your apps!
 rurio.luca@gmail.com
