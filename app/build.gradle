@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "it.auron.mecard"
-        minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 3
-        versionName "1.2"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 4
+        versionName "1.3"
     }
     buildTypes {
         release {
@@ -20,7 +19,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.github.kenglxn.QRGen:android:2.4.0'
-    implementation project(path: ':library')
+    implementation project(':library')
 }

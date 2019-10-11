@@ -49,35 +49,34 @@ package it.auron.library.vcard;
  * SOFTWARE.
  */
 
-import android.util.Log;
-
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import it.auron.library.mecard.MeCardCostant;
 
 /**
  * Created by luca on 7/22/16.
  */
 public class VCardParser {
 
-    public static VCard parse(String meCardContent) {
+    public static VCard parse(String vCardContent) {
         VCard vCard = new VCard();
 
-        if (!meCardContent.startsWith(VCardCostant.KEY_BEGIN_VCARD)) {
+        if (!isVCard(vCardContent)) {
             return null;
         }
 
-        meCardContent = meCardContent.substring(VCardCostant.KEY_BEGIN_VCARD.length(), meCardContent.length());
-        StringTokenizer st = new StringTokenizer(meCardContent, ";");
+        vCardContent = vCardContent.substring(VCardCostant.KEY_BEGIN_VCARD.length());
+        StringTokenizer st = new StringTokenizer(vCardContent, ";");
         while (st.hasMoreTokens()) {
             executeParsing(vCard, st.nextToken());
         }
 
 
         return vCard;
+    }
+
+    public static Boolean isVCard(String vCardContent) {
+        return vCardContent.startsWith(VCardCostant.KEY_BEGIN_VCARD);
     }
 
     private static void executeParsing(VCard vCard, String tokenparsing) {
@@ -130,16 +129,16 @@ public class VCardParser {
 
         for (String s : vCardContent.split(VCardCostant.KEY_SEPARATOR)) {
 
-            String value[] = s.split(VCardCostant.KEY_SPLIT);
+            String[] value = s.split(VCardCostant.KEY_SPLIT);
 
             if (value.length == 2) {
-                    map.put(value[0], value[1]);
+                map.put(value[0], value[1]);
             }
 
-            if(value.length >2 && value[0].equals(VCardCostant.KEY_WEB)){
-                    map.put(value[0], value[1]+":"+value[2]);
-                }
+            if (value.length > 2 && value[0].equals(VCardCostant.KEY_WEB)) {
+                map.put(value[0], value[1] + ":" + value[2]);
             }
+        }
 
 
         return map;

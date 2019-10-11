@@ -36,7 +36,7 @@ public class MeCardParser {
     public static MeCard parse(String meCardContent) {
         MeCard meCard = new MeCard();
 
-        if (!meCardContent.startsWith(MeCardCostant.KEY_MECARD)) {
+        if (!isMeCard(meCardContent)) {
             return null;
         }
 
@@ -49,6 +49,10 @@ public class MeCardParser {
 
 
         return meCard;
+    }
+
+    public static Boolean isMeCard(String meCardContent) {
+        return meCardContent.startsWith(MeCardCostant.KEY_MECARD);
     }
 
     private static void executeParsing(MeCard meCard, String tokenparsing) {

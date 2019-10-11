@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
-apply plugin: 'bintray-release'
+apply plugin: "guru.stefma.bintrayrelease"
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 28
-        versionCode 12
-        versionName "1.1.3"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 15
+        versionName "1.1.6"
     }
     buildTypes {
         release {
@@ -15,14 +15,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    version = "1.1.6"
+    group = "it.auron"
+    androidArtifact {
+        artifactId = 'mecard-parser'
+    }
+
     publish {
         userOrg = 'auron'
-        groupId = 'it.auron'
-        artifactId = 'mecard-parser'
-        publishVersion = '1.1.3'
+        desc = 'Parsing and generate content QrCode and barcode'
+        website = 'https://github.com/RurioLuca/QrCardParsing'
     }
+
 }
 
-dependencies {
 
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 }
