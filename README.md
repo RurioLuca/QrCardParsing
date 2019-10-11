@@ -23,7 +23,7 @@ Android Libraries to parsing and generate content of:
 
 The library requires Android **API Level 14+**.
 
-if you need a higher backward compatibility, use version 1.1.3 or lower
+if you need a higher backward compatibility, use version 1.1.3 or lower (api level 9+)
 ### Import
 
 in build.gradle
